@@ -44,12 +44,12 @@ Android application will follow the **MVVM** (Model-View-ViewModel) architecture
 Following layers will be using these technologies:
 
 - View
-  - Data Binding
+  - [Data Binding](https://developer.android.com/topic/libraries/data-binding)
 - ViewModel
 
 - Repository
-  - LiveData
-  - Retrofit
-  - Room
+  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
+  - [Retrofit](https://github.com/square/retrofit)
+  - [Room](https://developer.android.com/training/data-storage/room)
 
 ![android architecture img](https://raw.githubusercontent.com/Palda97/LPDocumentation/master/pics/bc-android.png)
