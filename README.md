@@ -35,7 +35,7 @@ User can:
 
 # Architecture and technologies
 
-Both link server and android application will be written in [Kotlin](https://kotlinlang.org/). Pipeline servers will communicate with the link server using by sending JSON-LD objects and the link server will communicate with android application by sending JSON objects. The link server will be using [Ktor](https://ktor.io/) framework.
+Both link server and android application will be written in [Kotlin](https://kotlinlang.org/). Pipeline servers will communicate with the link server by sending JSON-LD objects and the link server will communicate with android application by sending JSON objects. The link server will be using [Ktor](https://ktor.io/) framework.
 
 ![server architecture img](https://raw.githubusercontent.com/Palda97/LPDocumentation/master/pics/bc-servers.png)
 
