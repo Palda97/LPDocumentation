@@ -3,8 +3,8 @@
 ## Terms
 
 - Managing: Adding, editing, deleting
-- Pipeline: A set of tasks defined in ETL Linkedpipes server instance
-- Server instance: [ETL Linkedpipes](https://etl.linkedpipes.com/) server instance
+- Pipeline: A set of tasks defined in ETL LinkedPipes server instance
+- Server instance: [ETL LinkedPipes](https://etl.linkedpipes.com/) server instance
 - User: Common user of the android application
 - History: History of pipeline executions
 
@@ -13,9 +13,9 @@
 ### High level functional
 
 1. Pipeline managing
-2. Launching pipelines
+2. Executing pipelines
 3. Pipeline history
-4. Choosing the link server
+4. Managing server instances
 
 ### Functional
 
