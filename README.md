@@ -43,9 +43,6 @@
 | F&#x2011;5.4 | Source of visible history         | User must be able to choose, if he wants to see history of all instances, or just a specific one.                                               |   Must   | F&#x2011;5.0        |                                                                    | UC&#x2011;1, UC&#x2011;8, UC&#x2011;9 |
 | F&#x2011;6.1 | Night mode                        | Application can have a night mode, accessible from settings.                                                                                    |   Could  | F&#x2011;1.0        |                                                                    |                  |
 
-### Nonfunctional
-
-1. Native android application
 
 ## Use Cases
 
