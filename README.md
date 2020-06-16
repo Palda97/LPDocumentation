@@ -26,6 +26,7 @@
 | F&#x2011;2.2 | Add server instance               | User must be able to add server instance.                                                                                                       |   Must   | F&#x2011;1.0        |                                                                   | SC&#x2011;3.2                         |
 | F&#x2011;2.3 | Edit server instance              | User must be able to edit already added server instance.                                                                                        |   Must   | F&#x2011;2.1        |                                                                   | SC&#x2011;3.1                         |
 | F&#x2011;2.4 | Delete server instance            | User must be able to delete already added server instance. Confirmation will be required.                                                       |   Must   | F&#x2011;2.1        |                                                                   | SC&#x2011;3.3                         |
+| F&#x2011;2.5 | Deactive server instance          | User can deactivate server instance in settings instead of deleting it, so it is possible to activate it again later easily.                    |   Could  | F&#x2011;2.1        | App will not communicate with deactivated server instances.       |                                |
 | F&#x2011;3.1 | Notification after finish         | Application shell create notification on pipeline finish.                                                                                       |   Could  |              |                                                                   |                                |
 | F&#x2011;3.2 | Notifications in settings         | There will be switch in settings to toggle notifications.                                                                                       |   Could  | F&#x2011;1.0, F&#x2011;3.1 |                                                                   |                                |
 | F&#x2011;4.0 | Pipeline list screen              | Application must have a separate screen for working with pipelines.                                                                             |   Must   |              | Which pipelines will be visible there depends on F&#x2011;4.7.           | SC&#x2011;2.1, SC&#x2011;4.1, SC&#x2011;4.2, SC&#x2011;4.3 |
@@ -79,4 +80,21 @@ User: User of ETL LinkedPipes with an android phone.
 | SC&#x2011;5.1 | Re-execute pipeline from history                         | User opens execution history screen (F&#x2011;5.0, F&#x2011;5.1). He finds a pipeline and realize he wants to execute it now, so he tells that to the application (F&#x2011;5.3). Optional: After opening the execution history screen, he can selects what server instance executions he wants to see (F&#x2011;5.4).                                                                                              |
 | SC&#x2011;6.1 | Delete history                                           | User opens execution history screen (F&#x2011;5.0, F&#x2011;5.1). He finds a record and realize he for some reason doesn't want this record in history anymore, so he tells that to the application (F&#x2011;5.2). Optional: After opening the execution history screen, he can selects what server instance executions he wants to see (F&#x2011;5.4).                                                            |
 
+## Existing solutions
 
+| Existing solution  | Pros                                                                                                                              | Cons                                                                                                                                                                                                                                                                                     |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Responsive web app | It works on any device, not just android devices. Users don't have to download it, which also means they don't have to update it. | The responsive web app only works with one server instance. On an android device, it responds slower to screen rotation and animations feel laggy. Even if you don't want to execute anything, just view history or list pipelines, you have to be online. It is also browser dependent. |
+
+| Feature                                 | Android App | Web App |
+|-----------------------------------------|:-----------:|:-------:|
+| Can work with multiple server instances |      +      |    -    |
+| Works on any device                     |      -      |    +    |
+| Doesn't need to be downloaded           |      -      |    +    |
+| Smooth UI                               |      +      |    -    |
+| Can view stuff while offline            |      +      |    -    |
+
+## Design
+
+- [Sketch](https://davidpaleek316458.invisionapp.com/freehand/test-TQo84ZbPQ)
+- [Prototype](https://xd.adobe.com/view/4cacfb4f-c6f9-407a-7010-3142a920f0fd-3a9d/?fullscreen)
