@@ -1,5 +1,8 @@
+Requirements engineering is a process to determine things, the desired system will consist of. This process itself consists of four stages.
+
 \section{Elicitation}
-The first faze of requirements engineering is elicitation. It's the faze of gathering information. For me, it's these two lines:
+The first faze of requirements engineering is elicitation. It's the faze of gathering information.
+For us, it's these two lines:
 \begin{itemize}
     \item The student will design, implement, document and evaluate an Android-based mobile application serving as an alternative client to the current LinkedPipes ETL frontend.
     \item The application will provide pipeline and execution management and notification capabilities for multiple LinkedPipes ETL instances.
@@ -25,7 +28,7 @@ Analysis faze is all about making sense from elicitation. It's a systematic appr
 %	\end{tabularx}
 %\end{table}
 \subsection{Use cases}
-One good method of achieving this is by describing some use cases. Each use case is something that user expects from the system. I will also create scenarios for the non trivial ones. Scenario is an array of tasks user should do in order to go through the use case.
+One good method of achieving this is by describing some use cases. Each use case is something that user expects from the system. We will also create scenarios for the non trivial ones. Scenario is an array of tasks user should do in order to go through the use case.
 
 \subsubsection*{UC-1: Get overview of executions in particular server instance}
 Enables user to see what pipelines were executed in chronological order from specific server instance.
@@ -46,8 +49,16 @@ Enables user to view pipelines from all the server instances.
 \subsubsection*{UC-9: Be notified on execution finish}
 User has the option to be notified about execution completion.
 
+%\subsubsection*{Diagram}
+\begin{figure}\centering
+	\includegraphics[width=0.9\textwidth]{pics/bc-uc.png}
+	\caption[Use cases]{Diagram consisting of use cases}\label{fig:uc}
+\end{figure}
+
+%For better perspective, here is a diagram of all these use cases: \ref{fig:uc}
+
 \subsection{Scenarios}
-Now I can create some scenarios for the user.
+Now we can create some scenarios for the user.
 
 \subsubsection*{SC-1.1: Get overview of executions in particular server instance}
 User opens execution history screen and selects what server instance executions he wants to see.
@@ -122,4 +133,4 @@ User can have an option in settings to use light or dark theme, or use system de
 User can test if the server address is correct
 
 \section{Validation}
-//TODO
+In this stage I went through all of previous stages, corrected some typos. I gave everything a second look, to verify everything is somehow testable.

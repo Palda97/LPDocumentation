@@ -1,0 +1,106 @@
+\section{The three main screens}
+From specifications, it's clear that we need at least one screen for execution history, one for pipelines and one for settings.
+On the android platform, there are multiple navigation designs.
+
+\subsection{Navigation drawer}
+The hamburger icon at the top left and sliding menu from left to the right.
+If you have 5 or more top level screens, or if you want to have some sort of hierarchical menu, this might be the right choice for you, but that's not our case. We have only three main screens.
+Also, with the increasing sizes of mobile phones and most people being right-handed, it's hard to reach the hamburger menu with your right thumb.
+
+\subsection{Bottom navigation}
+Three to five icons, optionally with text, at the bottom of the screen.
+It solves the annoying problem with short thumb, because you no longer need to reach the top left corner with it.
+Material design states, that the recommended number of links is three to five. That sounds good.
+For now, it is one possibility.
+% But another recommendation is to make it consistent in a way, that it is visible from all screens.
+
+\subsection{Tabs}
+Slidable tabs on top of the screen.
+Recommendation is at least two screens.
+You can click on tab names or you can just slide left or right in order to navigate between the screens.
+It is another possibility.
+
+\subsection{Conclusion}
+The choice is either bottom navigation or tabs.
+I'm choosing tabs, because I like the idea of having an option to slide between the screens, rather than to be forced to only click.
+
+%\begin{figure}
+%	\includegraphics[width=0.3\textwidth]{pics/xd/History.png}
+%	\caption[History]{History screen design}\label{fig:xdHistory}
+%	\includegraphics[width=0.3\textwidth]{pics/xd/Pipelines.png}
+%	\caption[Pipelines]{Pipelines screen design}\label{fig:xdPipelines}
+%	\includegraphics[width=0.3\textwidth]{pics/xd/Settings.png}
+%	\caption[Settings]{Settings screen design}\label{fig:xdSettings}
+%\end{figure}
+
+\begin{figure}\centering
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/History.png}
+    	\caption[History]{History screen design}\label{fig:xdHistory}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Pipelines.png}
+    	\caption[Pipelines]{Pipelines screen design}\label{fig:xdPipelines}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Settings.png}
+    	\caption[Settings]{Settings screen design}\label{fig:xdSettings}
+    \end{minipage}
+\end{figure}
+
+\section{Another screens}
+
+\subsection{Edit server instance}
+While registering new server instance or editing an already registered one, the app needs the address for communication and some name for better organising.
+I will also let the user to add some description on the instance, so he doesn't need to store everything he wants to store about the instance in the server name.
+There could also be some option to ping the server (F-2.6) to verify the address and a way to cancel the registration/edit.
+Because of this all, I want to add another screen just for registering/editing server instance.
+
+\begin{figure}\centering
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Edit server instance.png}
+    	\caption[Edit server instance]{Edit server instance screen design}\label{fig:xdEditServerInstance}
+    \end{minipage}
+\end{figure}
+
+\subsection{Edit pipeline screen}
+As F-4.2 states, there have to be a screen for editing pipelines.
+Short description: This is the screen displaying pipeline components and drawing links between them.
+
+\begin{figure}\centering
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Create new pipeline.png}
+    	\caption[Create new pipeline dialog]{Create new pipeline dialog design}\label{fig:xdCreateNewPipelineDialog}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Pipeline editor.png}
+    	\caption[Edit pipeline screen]{Edit pipeline screen design}\label{fig:xdPipelineEditor}
+    \end{minipage}
+\end{figure}
+
+
+
+\subsection{Edit component screen}
+Each component have it's own settings so there is a need for another screen.
+
+\begin{figure}\centering
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Edit component - configuration.png}
+    	\caption[Edit component screen 1]{Edit component screen 1 design}\label{fig:xdEditComponent1}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Edit component - io.png}
+    	\caption[Edit component screen 2]{Edit component screen 2 design}\label{fig:xdEditComponent2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}\centering
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Edit unsupported component - configuration.png}
+    	\caption[Edit unsupported component screen 1]{Edit unsupported component screen 1 design}\label{fig:xdEditUnsupportedComponent1}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+    	\includegraphics[width=\textwidth]{pics/xd/Edit unsupported component - io.png}
+    	\caption[Edit unsupported component screen 2]{Edit unsupported component screen 2 design}\label{fig:xdEditUnsupportedComponent2}
+    \end{minipage}
+\end{figure}
