@@ -95,7 +95,7 @@ You will ask the repository, also known as the one and the only source of truth.
 
 \subsection{DAO and network IO}
 This will be the fourth layer.
-Every android app can run it's own LiteSQL database.
+Every android app can run it's own SQLite database.
 Data Access Objects will be used to access data in in this database.
 There is a nice library for that called Room and we will be using it.
 Network IO layer will be responsible for communication with server instance API.
@@ -108,7 +108,7 @@ It will be used in each layer.
 Previously I talked about observing some kind of stream.
 For this, you need some kind of observable variables and that's what LiveData is.
 It enables you to set some action to happen when the data changes.
-LiveData is now just some dumb stream, it only streams, when there is some observer living.
+LiveData is not just some ordinary stream, it only streams, when there is some observer living.
 It may sound silly, but for example, you don't need to update certain screen, when that screen is not visible.
 
 \section{Conclusion}

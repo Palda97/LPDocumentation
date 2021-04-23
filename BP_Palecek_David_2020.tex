@@ -42,9 +42,9 @@
 \abstractCS{Tato práce se zabývá tvorbou androidového klienta pro LinkedPipes ETL. Obsahuje všechny stádia vývoje této aplikace.}
 \abstractEN{This work deals with the creation of an Android client for LinkedPipes ETL. It contains all stages of development of this application.}
 \placeForDeclarationOfAuthenticity{V~Praze}
-\declarationOfAuthenticityOption{4} %volba Prohlášení (číslo 1-6)
-\keywordsCS{android, klient, linked, pipes, etl}
-\keywordsEN{android, client, linked, pipes, etl}
+\declarationOfAuthenticityOption{5} %volba Prohlášení (číslo 1-6)
+\keywordsEN{client creation, android, kotlin, LinkedPipes, ETL}
+\keywordsCS{tvorba klienta, android, kotlin, LinkedPipes, ETL}
 % \website{http://site.example/thesis} %volitelná URL práce, objeví se v tiráži - úplně odstraňte, nemáte-li URL práce
 \usepackage{pdfpages}
 \begin{document}
@@ -54,7 +54,7 @@
 
 \begin{introduction}
 	%sem napište úvod Vaší práce
-	//TODO
+	\input{chapters/introduction}
 \end{introduction}
 
 %\chapter{Work goal}
@@ -82,6 +82,9 @@
 \chapter{Work goal}
 \input{chapters/goal}
 
+\chapter{Literary research}
+\input{chapters/literaryResearch}
+
 %\input{chapters/testing}
 %\input{chapters/templateHelp}
 
@@ -104,7 +107,7 @@
 
 \begin{conclusion}
 	%sem napište závěr Vaší práce
-	//TODO
+	\input{chapters/conclusion}
 \end{conclusion}
 
 \bibliographystyle{csn690}
@@ -112,11 +115,10 @@
 
 \appendix
 
-\chapter{Seznam použitých zkratek}
+% \chapter{Seznam použitých zkratek}
+\chapter{List of abbreviations used}
 % \printglossaries
 \begin{description}
-	\item[GUI] Graphical user interface
-	\item[XML] Extensible markup language
 	\input{terms}
 \end{description}
 
