@@ -1,33 +1,16 @@
-Requirements engineering is a process to determine things, the desired system will consist of. This process itself consists of four stages.
+Requirements engineering is a process to determine things, the desired system will consist of. This process itself consists of three stages.
 
 \section{Elicitation}
 The first faze of requirements engineering is elicitation. It's the faze of gathering information.
 For us, it's these two lines:
 \begin{itemize}
-    %\item The student will design, implement, document and evaluate an Android-based mobile application serving as an alternative client to the current LinkedPipes ETL frontend.
     \item It will be an android-based mobile application serving as an alternative client to the current LinkedPipes ETL frontend.
     \item The application will provide pipeline and execution management and notification capabilities for multiple LinkedPipes ETL instances.
 \end{itemize}
 
 \section{Analysis}
 Analysis faze is all about making sense from elicitation. It's a systematic approach to elicitation.
-%One good method is describing some use cases, as shown in next table:
-%\ref{tab:usecases}
-%\begin{table}\centering
-%	\caption[Use cases]{Use cases}\label{tab:usecases}
-%	\begin{tabularx}{\textwidth}{|X|X|}
-%        \hline
-%        UC-1: Get overview of executions in particular server instance & Enables user to see what pipelines were executed in chronological order from specific server instance. \\ \hline
-%        UC-2: Execute specific pipeline & Enables user to execute pipeline of his choice from specific server instance. \\ \hline
-%        UC-3: Manage registered server instances & Enables user to register server instance in the application. Application will check, if IP is already registered or if name of the new server instance is already in use, in order to warn user about duplication or name collision that could cause chaos. It also enables user to change IP address of already registered server instance due to type error or network changes. User can also remove registered server instance. \\ \hline
-%        UC-4: Manage pipelines & Enables user to manage pipelines in desired server instance. \\ \hline
-%        UC-5: Re-execute pipeline from history & Enables user to quickly execute pipeline he stumbles upon while viewing history. \\ \hline
-%        UC-6: Delete history & Enables user to delete items from history. \\ \hline
-%        UC-7: View execution history & Enables user to view execution history of all the instances at the same time. \\ \hline
-%        UC-8: View pipelines & Enables user to view pipelines from all the server instances. \\ \hline
-%        UC-9: Be notified on execution finish & User has the option to be notified about execution completion. \\ \hline      
-%	\end{tabularx}
-%\end{table}
+
 \subsection{Use cases}
 One good method of achieving this is by describing some use cases. Each use case is something that user expects from the system. We will also create scenarios for the non trivial ones. Scenario is an array of tasks user should do in order to go through the use case.
 
@@ -132,6 +115,3 @@ User must be able to choose, if he wants to see history of all instances, or jus
 User can have an option in settings to use light or dark theme, or use system default theme (Android 10 and newer).
 \subsection*{F-2.6: Ping server}
 User can test if the server address is correct
-
-\section{Validation}
-In this stage I went through all of previous stages, corrected some typos. I gave everything a second look, to verify everything is somehow testable.

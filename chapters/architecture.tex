@@ -6,13 +6,15 @@ Every non trivial software project should follow some architecture design.
 But why? You want your project to be always maintainable and expandable as much easily as possible.
 You want to modularize it, so that you can just take one part and exchange it without the need of rewriting the whole project.
 And for this reason, there are architecture patterns.
-I will describe three of them and explain my conclusion.
+
+\subsection{Basic patterns}
+We will go through three of them and explain the conclusion.
 
 All of these three patterns have one thing in common.
 They structure code into three main layers.
 The names of those layers are present in these pattern's names.
 
-\subsection{MVC}
+\subsubsection{MVC}
 
 \begin{figure}\centering
 	\includegraphics[width=1\textwidth]{pics/patterns/bc-mvc2.png}
@@ -21,11 +23,11 @@ The names of those layers are present in these pattern's names.
 
 \textbf{Model View Controller}.
 View is responsible for displaying data, controller is responsible for getting the user input and model for storing data.
-The controller takes user input, it updates the model and then tells the view to update itself.
+The controller takes user input, it updates the model and then tells the view to update itself.\cite{droidcon}
 
 Now we know, that if we choose this, it will be implemented in android.
 How does one do this? In the android world, the part of application responsible for displaying things is also responsible for dealing with user input.
-So you tweak the pattern so the view gets the user input, it sends it to the controller, the controller updates the model, then tells the view to update itself, based on the data from model.
+So you tweak the pattern so the view gets the user input, it sends it to the controller, the controller updates the model, then tells the view to update itself, based on the data from model.\cite{droidcon}
 
 So both view and controller know the model, the view knows controller and controller knows view.
 That's pretty bad, you don't want this.
@@ -37,7 +39,7 @@ You don't want to push this to the view, because you want the UI logic also to b
 Controller can not posses it neither, because it doesn't supply any data to the view. So should you put it in the model? Absolutely not!
 Why should a part of the application, responsible for data storing, know how to display stuff?
 
-\subsection{MVP}
+\subsubsection{MVP}
 
 \begin{figure}\centering
 	\includegraphics[width=0.7\textwidth]{pics/patterns/bc-mvp.png}
@@ -47,12 +49,12 @@ Why should a part of the application, responsible for data storing, know how to 
 Imagine the MVC and the UI logic problem.
 Now what if the view doesn't communicate with the model, but only with controller and the controller was also responsible for taking data from the model and supplying them to the view.
 Then you would be able to put UI logic to this new controller. Now we will call it presenter, instead of new controller.
-And that's what \textbf{Model View Presenter} is.
+And that's what \textbf{Model View Presenter} is.\cite{droidcon}
 
-But that means the presenter still holds a link to the view. You still need to write some repetitive code because of this.
+But that means the presenter still holds a link to the view. You still need to write some repetitive code because of this.\cite{mvp}
 Second, why would the presenter should know, what parts of the view should be updated after the data changes?
 
-\subsection{MVVM}
+\subsubsection{MVVM}
 
 \begin{figure}\centering
 	\includegraphics[width=0.7\textwidth]{pics/patterns/bc-mvvm.png}
@@ -68,19 +70,19 @@ So the view knows the viewmodel, can call it's methods on user input and observe
 The viewmodel knows model, observes it's data streams and omits them to the view.
 The view knows the viewmodel, the viewmodel knows the model and the model don't know any of them.
 
-\subsection{And the winner is ...}
+\subsection{Conclusion}
 Our choice is MVVM. Not only it looks like the tip of the evolution, but Google even made some libraries to support it.
 
 \section{Main layers and libraries}
 We will go over the three main layers of the MVVM, add a fourth at the end and describe some libraries that will be used inside of them.
 
 \subsection{View}
-As I said before, the view is the layer responsible for displaying data. It's what I call a screen in functional requirements.
+As we said before, the view is the layer responsible for displaying data. It's what it called a screen in functional requirements.
 The way it's implemented is through a combination of standard kotlin code and xml.
 The xml is like a skeleton and kotlin is like life. In xml, you specify the look and in kotlin, you can specify what data it should display, how to update itself and what to do with user input.
 
 For that, you have to somehow link or bind these two things (xml and kotlin) together.
-We will be using a library called Data Binding. It's better than nothing and compared to other solutions, like kotlin's synthetics, Data Binding offers more features and I personally think it looks clearer.
+We will be using a library called Data Binding. It's better than nothing and compared to other solutions, like kotlin's synthetics, Data Binding offers more features and has a more robust outlook.
 
 \subsection{Viewmodel}
 Google has made some architecture components and one of them is exactly for viewmodel.
@@ -105,7 +107,7 @@ Repository will be using both of those in order to maintain and organise data.
 \subsection{LiveData}
 LiveData is a library.
 It will be used in each layer.
-Previously I talked about observing some kind of stream.
+Previously we talked about observing some kind of stream.
 For this, you need some kind of observable variables and that's what LiveData is.
 It enables you to set some action to happen when the data changes.
 LiveData is not just some ordinary stream, it only streams, when there is some observer living.
