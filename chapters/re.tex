@@ -53,13 +53,13 @@ User opens settings screen, selects the desired server instance for edit. He the
 \subsubsection*{SC-3.2: Register server instance}
 User opens settings screen, tells the application he wants to register new server instance and proceeds to enter server instance info and saves it.
 \subsubsection*{SC-3.3: Delete registered server instance}
-User opens settings screen, views registered server instances and tells the application what server instance he wants to delete, followed by confirmation.
+User opens settings screen, views registered server instances and tells the application what server instance he wants to delete. It will be possible to undo the action.
 \subsubsection*{SC-4.1: Create pipeline}
 User opens pipeline list screen. Then he tells the application he wants to create a new pipeline. He chooses a server instance to which the pipeline will be saved and the screen for editing pipeline will be launched and the user can design a new pipeline here. When he is finished, he will save the pipeline.
 \subsubsection*{SC-4.2: Edit pipeline}
 User opens pipeline list screen. He then finds the desired pipeline and tells the application he wants to edit it. The screen for editing pipeline will be launched with the selected pipeline loaded so the user can make and save changes here. Optional: After opening the pipeline screen, user can filter pipelines by the server instance.
 \subsubsection*{SC-4.3: Delete pipeline}
-User opens pipeline list screen. He then finds the desired pipeline and tells the application he wants to delete it. This request is followed by confirmation. Optional: After opening the pipeline screen, user can filter pipelines by the server instance.
+User opens pipeline list screen. He then finds the desired pipeline and tells the application he wants to delete it. It will be possible to undo the action. Optional: After opening the pipeline screen, user can filter pipelines by the server instance.
 \subsubsection*{SC-5.1: Re-execute pipeline from history}
 User opens execution history screen. He finds a pipeline and realize he wants to execute it now, so he tells that to the application. Optional: After opening the execution history screen, he can selects what server instance executions he wants to see.
 \subsubsection*{SC-6.1: Delete history}
@@ -69,6 +69,7 @@ User executes specific pipeline, just like in SC-2.1. Application will notify us
 
 \section{Specification}
 The goal of this section is to produce a structured document consisting of functional requirements.
+
 \subsection*{F-1.0: Settings screen}
 Application must have a separate screen for settings. It can be seen in scenarios SC-3.1, SC-3.2, SC-3.3.
 \subsection*{F-2.1: View server instance}
@@ -78,9 +79,13 @@ User must be able to add server instance. It can be seen in scenarios SC-3.2.
 \subsection*{F-2.3: Edit server instance}
 User must be able to edit already added server instance. It can be seen in scenarios SC-3.1.
 \subsection*{F-2.4: Delete server instance}
-User must be able to delete already added server instance. Confirmation will be required. It can be seen in scenarios SC-3.3.
+User must be able to delete already added server instance. It will be possible to undo the action. It can be seen in scenarios SC-3.3.
 \subsection*{F-2.5: Deactivate server instance}
 User can deactivate server instance in settings instead of deleting it, so it is possible to activate it again later easily. App will not communicate with deactivated server instances.
+\subsection*{F-2.6: Ping server}
+User can test if the server address is correct
+\subsection*{F-2.7: Load server instance info from qr code}
+User can load server instance URL from qr code
 \subsection*{F-3.1: Notification after finish}
 Application shell create notification on pipeline finish. It can be seen in scenarios SC-9.1.
 \subsection*{F-3.2: Notifications in settings}
@@ -94,7 +99,7 @@ Application must have a screen for editing pipelines. It can be seen in scenario
 \subsection*{F-4.3: Create pipelines}
 User must be able to start an empty edit pipeline screen (F-4.2) from the pipeline list screen (F-4.0). It can be seen in scenarios SC-4.1.
 \subsection*{F-4.4: Edit existing pipelines}
-User must be able to edit selected pipeline by starting the edit pipeline screen (F-4.2) with the selected activity loaded. It can be seen in scenarios SC-4.2.
+User must be able to edit selected pipeline by starting the edit pipeline screen (F-4.2) with the selected pipeline loaded. It can be seen in scenarios SC-4.2.
 \subsection*{F-4.5: Delete pipelines}
 User must be able to delete a pipeline of his choice. It can be seen in scenarios SC-4.3.
 \subsection*{F-4.6: Execute pipeline}
@@ -106,12 +111,10 @@ Application must have a separate screen for execution history. History of which 
 \subsection*{F-5.1: View execution history}
 List of executions will be visible from the execution history screen. History of which server instance will be visible depends on F-5.4 It can be seen in scenarios SC-1.1, SC-5.1, SC-6.1.
 \subsection*{F-5.2: Delete items from history}
-User must be able to delete specific item from execution history. Confirmation will be required. It can be seen in scenarios SC-6.1.
+User must be able to delete specific item from execution history. It will be possible to undo the action. It can be seen in scenarios SC-6.1.
 \subsection*{F-5.3: Re-execute pipelines from history}
 There must be an option to re-execute pipeline from the execution history screen. This action will also make a new record in execution history. It can be seen in scenarios SC-5.1.
 \subsection*{F-5.4: Source of visible history}
 User must be able to choose, if he wants to see history of all instances, or just a specific one. It can be seen in scenarios SC-1.1, SC-5.1, SC-6.1.
 \subsection*{F-6.1: Night mode}
 User can have an option in settings to use light or dark theme, or use system default theme (Android 10 and newer).
-\subsection*{F-2.6: Ping server}
-User can test if the server address is correct

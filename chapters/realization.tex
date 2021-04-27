@@ -9,7 +9,7 @@ For each entity you want to store in database, you define an entity class, which
 For the simplest entity class, you just need to annotate the whole class with \verb|@Entity| and annotate primary key either with \verb|@PrimaryKey| or with multiple primary keys, you can list them as an argument in \verb|@Entity| annotation.
 In order to get objects to and from database, you need DAO classes.
 The magic is that you declare abstract methods with annotations, optionally with some SQL syntax and Room implements them for you.
-Those methods return either the entities, lists of entities or LiveData instances of entities or lists.\cite{room}
+Those methods return either the entities, lists of entities or LiveData instances of entities or lists.
 
 \subsection{LiveData}
 LiveData is an observable data structure.
@@ -17,12 +17,12 @@ Components of view layer can observe those variables, which means that they can 
 Under the hood, it's a bit more complex.
 If content changes multiple times between the screen refresh rate, the view gets only the latest change.
 Before observing, the view passes it's own instance of lifecycle, so the LiveData instance knows, when the view is not active or destroyed, so the LiveData instance can delete the reference to this view and stop updating this observer, because of performance and memory leaks.
-One of the best things about this library is, that Room can also return LiveData instances, so each time something from the selected group changes, the view knows about it.\cite{livedata}
+One of the best things about this library is, that Room can also return LiveData instances, so each time something from the selected group changes, the view knows about it.
 
 \subsection{Retrofit}
 Retrofit is a nice android library for making network requests.
 The setup is similar to Room DAO classes.
-For each API call, you define an abstract method.\cite{retrofit}
+For each API call, you define an abstract method.
 It also works very well with OkHttp library, which is different http request library, that among everything supports the basic authentication.
 
 \subsection{Coroutines}
@@ -42,12 +42,12 @@ It will be used while transforming incoming network content to objects we can wo
 
 \subsection{Varvet's QR code scanner}
 Google made an API for working with QR codes and Varvet made it even easier.
-Varvet made an open source project BarcodeReaderSample and published it under MIT license.\cite{varvet}
+Varvet made an open source project BarcodeReaderSample and published it under MIT license.
 
 \subsection{DraggableView by hyuwah}
 Pipeline's components should be freely movable across the canvas while editing the pipeline.
 That can be achieved by making some regular view (button or image) movable.
-This is often achieved by a lot of unnecessary code and that's why we will be using this library that should make it easy.\cite{draggable}
+This is often achieved by a lot of unnecessary code and that's why we will be using this library that should make it easy.
 
 \section{Interesting logic}
 This section will describe some of the more complex internal logic.
@@ -114,12 +114,23 @@ Hamcrest will be used for matching lists and MockK for mocking.
 \subsection{Local unit tests}
 These are tests that require only JVM.
 They don't need any part of the android framework, so there's no need to run them on an android device, which makes them fast.
-Parsing objects from JSON and back can be tested here.
+Parsing objects from JSON and back can and will be tested here.
+
+\begin{figure}\centering
+	\includegraphics[width=1\textwidth]{pics/coverage.png}
+	\caption[Test Coverage]{Picture with local test coverage}\label{fig:coverage}
+\end{figure}
+We will test the model layer here, but since we don't have access to the database, repository and DAOs will be excluded from these tests.
+The coverage, as displayed here: \ref{fig:coverage}, is 89 \% for classes and 85 \% for methods.
+70 \% to 80 \% is commonly considered good coverage.
 
 \subsection{Instrumented unit tests}
 Instrumented tests require some part of the android framework, so they run in background on an android device.
 Previously mentioned library Room requires a part of android framework, so it can be used here.
-Repositories can be tested here.
+Repositories will be tested here too.
+
+Unfortunately, the coverage could not be put into operation here.
+After researching how coverage can be done on instrumented tests, most of the tutorials are bound to the JaCoCo library, which caused some errors during commissioning attempts.
 
 \section{Documentation}
 Looking at a code after some time may feel strange and not very intuitive and that's why documentations exist.
@@ -133,3 +144,5 @@ In kotlin, there are a documenting type of comment called KDoc.
 There is also a plugin called Dokka, that can construct a website based on the KDoc comments, documenting application's code.
 
 It's also a good idea to write a piece of documentation by hand, explaining the internal operations from a greater distance, so other developers can have a more bearable understanding of the application when they follow up on development.
+
+Links to both of those will be accessible on the project's github page.

@@ -110,12 +110,11 @@
 	\input{chapters/conclusion}
 \end{conclusion}
 
-\bibliographystyle{csn690}
-\bibliography{mybibliographyfile}
+%\bibliographystyle{csn690}
+%\bibliography{mybibliographyfile}
+\input{bibliography}
 
 \appendix
-
-\input{bibliography}
 
 \chapter{List of abbreviations used}
 % \printglossaries
@@ -127,14 +126,16 @@
 
 \begin{figure}
 	\dirtree{%
-		.1 readme.txt\DTcomment{stručný popis obsahu CD}.
-		.1 exe\DTcomment{adresář se spustitelnou formou implementace}.
-		.1 src.
-		.2 impl\DTcomment{zdrojové kódy implementace}.
-		.2 thesis\DTcomment{zdrojová forma práce ve formátu \LaTeX{}}.
-		.1 text\DTcomment{text práce}.
-		.2 thesis.pdf\DTcomment{text práce ve formátu PDF}.
-		.2 thesis.ps\DTcomment{text práce ve formátu PS}.
+		.1 readme.txt\DTcomment{brief description of the contents of the CD}.
+	    .1 doc/.
+	    .2 index.html\DTcomment{developer documentation}.
+	    .2 videos.html\DTcomment{video tutorials online}.
+	    .1 videos/\DTcomment{video tutorials}.
+	    .1 LinkedPipesAndroidClient/\DTcomment{application's source codes}.
+	    .2 README.md\DTcomment{UI documentation and OS requirements}.
+		.1 ETLClient.apk\DTcomment{application package}.
+		.1 thesis/\DTcomment{\LaTeX{} source codes of this thesis}.
+		.1 thesis.pdf\DTcomment{this thesis as a PDF}.
 	}
 \end{figure}
 
