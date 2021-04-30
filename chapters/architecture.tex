@@ -106,7 +106,7 @@ Repository will be using both of those in order to maintain and organise data.
 
 \subsection{LiveData}
 LiveData is a library.
-It will be used in each layer.
+It will be used in each layer. \todo[inline]{why?}
 Previously we talked about observing some kind of stream.
 For this, you need some kind of observable variables and that's what LiveData is.
 It enables you to set some action to happen when the data changes.
@@ -121,5 +121,5 @@ It may sound silly, but for example, you don't need to update certain screen, wh
 \end{figure}
 
 For better perspective, here is a summarizing diagram: \ref{fig:architecture}
-
+\todo[inline]{use autoref}
 The android device will communicate directly with multiple server instances. Network IO layer will be responsible for this communication. Repository will cache it using the Local DB layer and hand out data to the viewmodel. Viewmodel can do any UI logic that's needed and pass it to the view. All handing out or passing from any bottom layer to the one on top will be done through the observation of LiveData.

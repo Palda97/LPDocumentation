@@ -19,6 +19,8 @@
 
 \usepackage{dirtree} %directory tree visualisation
 
+\usepackage{todonotes}
+
 % % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
 % \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
@@ -39,7 +41,8 @@
 \author{David Paleček} %jméno autora bez akademických titulů
 \supervisor{RNDr. Jakub Klímek, Ph.D.}
 %\acknowledgements{Doplňte, máte-li komu a za co děkovat. V~opačném případě úplně odstraňte tento příkaz.}
-\abstractCS{Tato práce se zabývá tvorbou androidového klienta pro LinkedPipes ETL. Obsahuje všechny stádia vývoje této aplikace.}
+%\abstractCS{Tato práce se zabývá tvorbou androidového klienta pro LinkedPipes ETL. Obsahuje všechny stádia vývoje této aplikace. \todo[inline]{Takto abstrakt nestačí. Abstrakt by měl mít několik vět. Přidejte např. co to je LP-ETL, že má jen webové rozhraní, a co konkrétně za stádia práce obsahuje.}}
+\abstractCS{Tato práce se zabývá tvorbou androidového klienta pro LinkedPipes ETL. Obsahuje všechny stádia vývoje této aplikace. \todo[inline]{Takto abstrakt nestačí. Abstrakt by měl mít několik vět. Přidejte např. co to je LP-ETL, že má jen webové rozhraní, a co konkrétně za stádia práce obsahuje.}}
 \abstractEN{This work deals with the creation of an Android client for LinkedPipes ETL. It contains all stages of development of this application.}
 \placeForDeclarationOfAuthenticity{V~Praze}
 \declarationOfAuthenticityOption{5} %volba Prohlášení (číslo 1-6)
@@ -83,6 +86,7 @@
 \input{chapters/goal}
 
 \chapter{Literary research}
+\todo[inline]{tady té kapitole nerozumím. Bibliografie je sekce na konci práce.}
 \input{chapters/literaryResearch}
 
 %\input{chapters/testing}
