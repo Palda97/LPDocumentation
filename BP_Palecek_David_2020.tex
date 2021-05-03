@@ -33,6 +33,11 @@
 % ODTUD DAL VSE ZMENTE
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
+% Auto-Capitalise First Letter
+\newcommand{\acfl}[1]{\ifnum\ifhmode\spacefactor\else2000\fi>1000 \uppercase{#1}\else#1\fi}
+\newcommand{\etl}{LinkedPipes ETL}
+\newcommand{\ld}{\acfl{l}inked data}
+
 \department{Department of Software Engineering}
 \title{Mobile client for LinkedPipes ETL on the Android platform}
 \authorGN{David} %(křestní) jméno (jména) autora
@@ -40,10 +45,20 @@
 \authorWithDegrees{David Paleček} %jméno autora včetně současných akademických titulů
 \author{David Paleček} %jméno autora bez akademických titulů
 \supervisor{RNDr. Jakub Klímek, Ph.D.}
-%\acknowledgements{Doplňte, máte-li komu a za co děkovat. V~opačném případě úplně odstraňte tento příkaz.}
+\acknowledgements{I would like to thank my supervisor RNDr. Jakub Klímek, Ph.D. for his never ending patience and willingness to guide me. Also, I would like to thank my parents for supporting me through my studies.}
 %\abstractCS{Tato práce se zabývá tvorbou androidového klienta pro LinkedPipes ETL. Obsahuje všechny stádia vývoje této aplikace. \todo[inline]{Takto abstrakt nestačí. Abstrakt by měl mít několik vět. Přidejte např. co to je LP-ETL, že má jen webové rozhraní, a co konkrétně za stádia práce obsahuje.}}
-\abstractCS{Tato práce se zabývá tvorbou androidového klienta pro LinkedPipes ETL. Obsahuje všechny stádia vývoje této aplikace. \todo[inline]{Takto abstrakt nestačí. Abstrakt by měl mít několik vět. Přidejte např. co to je LP-ETL, že má jen webové rozhraní, a co konkrétně za stádia práce obsahuje.}}
-\abstractEN{This work deals with the creation of an Android client for LinkedPipes ETL. It contains all stages of development of this application.}
+\abstractCS{
+\etl{} je systém pro práci s \ld{}, který má pouze webové rozhraní.
+Tato práce se zabývá tvorbou mobilního klienta \etl{} pro platformu Android.
+Obsahuje všechny stádia vývoje této aplikace, což jsou sepsání požadavků pro aplikaci, procházení exiistujících řešení, navrhování aplikace, implementace, testování a tvorba dokumentace.
+\todo[inline]{Takto abstrakt nestačí. Abstrakt by měl mít několik vět. Přidejte např. co to je LP-ETL, že má jen webové rozhraní, a co konkrétně za stádia práce obsahuje.}
+}
+% \abstractEN{This work deals with the creation of an Android client for LinkedPipes ETL. It contains all stages of development of this application.}
+\abstractEN{
+\etl{} is a system for working with \ld{}, which has only a web interface.
+This work deals with the creation of the \etl{} mobile client for the Android platform.
+It contains all stages of the development of this application, which are writing down the application requirements, the browsing of existing solutions, the designing of application, implementation, testing and the creation of documentation.
+}
 \placeForDeclarationOfAuthenticity{V~Praze}
 \declarationOfAuthenticityOption{5} %volba Prohlášení (číslo 1-6)
 \keywordsEN{client creation, android, kotlin, LinkedPipes, ETL}
@@ -82,28 +97,33 @@
 %\chapter{Deployment}
 %\include{chapters/deployment}
 
-\chapter{Work goal}
+\chapter*{Work goal}
+\addcontentsline{toc}{chapter}{Work goal}
 \input{chapters/goal}
 
-\chapter{Literary research}
-\todo[inline]{tady té kapitole nerozumím. Bibliografie je sekce na konci práce.}
-\input{chapters/literaryResearch}
+%\chapter{Literary research}
+%\todo[inline]{tady té kapitole nerozumím. Bibliografie je sekce na konci práce.}
+%\input{chapters/literaryResearch}
 
 %\input{chapters/testing}
 %\input{chapters/templateHelp}
 
 \chapter{Requirements engineering}
+\label{chap:requirementsengineering}
 \input{chapters/re}
 
 \chapter{Existing solutions}
+\label{chap:existingsolutions}
 \input{chapters/existingSolutions}
 
 \chapter{Design}
+\label{chap:design}
 \input{chapters/ui}
 \input{chapters/architecture}
 
 %\chapter{Realization}
 \chapter{Implementation}
+\label{chap:implementation}
 \input{chapters/realization}
 
 \chapter{Deployment}

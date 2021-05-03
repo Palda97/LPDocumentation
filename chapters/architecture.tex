@@ -2,16 +2,21 @@
 % https://www.youtube.com/watch?v=QrbhPcbZv0I
 
 \section{Software architecture patterns}
-Every non trivial software project should follow some architecture design.
-But why? You want your project to be always maintainable and expandable as much easily as possible.
-You want to modularize it, so that you can just take one part and exchange it without the need of rewriting the whole project.
-And for this reason, there are architecture patterns.
+Every non trivial software project should follow some architecture design so it always remains maintainable and expandable as much easily as possible.
+The project should be modularized, so that any part could be replaced without the need of rewriting the entire project.
+And for this reason, there exist architecture patterns.
 
 \subsection{Basic patterns}
-We will go through three of them and explain the conclusion.
+% We will go through three of them and explain the conclusion.
 
-All of these three patterns have one thing in common.
-They structure code into three main layers.
+% All of these three patterns have one thing in common.
+% They structure code into three main layers.
+% The names of those layers are present in these pattern's names.
+
+The three basic software architecture patterns will be described here.
+The conclusion on which one to pick for our application will be made afterwards.
+
+All of these patterns have one thing in common, that being structuring code into three main layers.
 The names of those layers are present in these pattern's names.
 
 \subsubsection{MVC}
@@ -22,22 +27,19 @@ The names of those layers are present in these pattern's names.
 \end{figure}
 
 \textbf{Model View Controller}.
-View is responsible for displaying data, controller is responsible for getting the user input and model for storing data.
-The controller takes user input, it updates the model and then tells the view to update itself.\cite{droidcon}
+View is responsible for displaying data, controller is responsible for getting the user input and model for storing and serving data.
+The controller takes user input, it updates the model and then tells the view to update itself. \cite{droidcon}
 
-Now we know, that if we choose this, it will be implemented in android.
-How does one do this? In the android world, the part of application responsible for displaying things is also responsible for dealing with user input.
-So you tweak the pattern so the view gets the user input, it sends it to the controller, the controller updates the model, then tells the view to update itself, based on the data from model.\cite{droidcon}
+On the Android platform, the part of application responsible for displaying data is also responsible for dealing with user input.
+The pattern can be modified the way that the view gets the user input, sends it to the controller, the controller updated the model and then informs the view to update itself, based on the data from model. \cite{droidcon}
 
-So both view and controller know the model, the view knows controller and controller knows view.
-That's pretty bad, you don't want this.
-That's high consistency and that is a thing you want to avoid, especially in the android world, where forgetting to remove a link can and will cause memory leaks.
+So both view and controller know the model, the view knows controller and the controller knows the view.
+That's high consistency and that is a thing to be avoided, especially in the Android world, where forgetting to remove a link can and will cause memory leaks.
 
-And what if you want to somehow transform the data for presentation?
+And what if the data should be somehow transformed for presentation?
 What part should do this presentation transformation, also known as UI logic?
-You don't want to push this to the view, because you want the UI logic also to be easily testable and you want to separate it from the appearance of the view.
-Controller can not posses it neither, because it doesn't supply any data to the view. So should you put it in the model? Absolutely not!
-Why should a part of the application, responsible for data storing, know how to display stuff?
+This logic should not be pushed to the view, because it's purpose is only display the given data.
+The controller and the model can not posses it neither, because the controller doesn't supply any data to the view and model is responsible for data storing and serving and there is no reason why it should know how to display data.
 
 \subsubsection{MVP}
 
@@ -46,15 +48,16 @@ Why should a part of the application, responsible for data storing, know how to 
 	\caption[MVP]{Model View Presenter}\label{fig:mvp}
 \end{figure}
 
-Imagine the MVC and the UI logic problem.
-Now what if the view doesn't communicate with the model, but only with controller and the controller was also responsible for taking data from the model and supplying them to the view.
-Then you would be able to put UI logic to this new controller. Now we will call it presenter, instead of new controller.
-And that's what \textbf{Model View Presenter} is.\cite{droidcon}
+Following the MVC and the UI logic problem.
+What if the view doesn't communicate with the model, but only with controller and the controller was also responsible for taking data from the model and supplying them to the view.
+The UI logic could be put in this new controller. This new controller will be called presenter, instead of new controller.
+And that's what \textbf{Model View Presenter} is. \cite{droidcon}
 
-But that means the presenter still holds a link to the view. You still need to write some repetitive code because of this.\cite{mvp}
-Second, why would the presenter should know, what parts of the view should be updated after the data changes?
+But that means the presenter still holds a link to the view and some repetitive code would have to be written because of this. \cite{mvp}
+Also, the presenter should not know what parts of the view should be updated after the data changes, because displaying data is not his job.
 
 \subsubsection{MVVM}
+\label{subsec:mvvm}
 
 \begin{figure}\centering
 	\includegraphics[width=0.7\textwidth]{pics/patterns/bc-mvvm.png}
@@ -62,56 +65,63 @@ Second, why would the presenter should know, what parts of the view should be up
 \end{figure}
 
 \textbf{Model View Viewmodel}.
-We will borrow the MVP and tweak it a little. Currently the presenter knows the view and is executing it's methods when it needs to be updated.
-Let's rename presenter to viewmodel. It no longer knows it's view.
-Instead it provides some kind of stream and the view can observe the stream, so it can do whatever whenever it omits any data.
+When following the MVP, the presenter knows the view and is executing it's methods when it needs to be updated.
+The presenter will no longer know it's view.
+Instead it will provide some kind of stream and the view will be able observe the stream, so it can display the data whenever the data changes.
+This new presenter will be called viewmodel.
 
-So the view knows the viewmodel, can call it's methods on user input and observe it's data streams.
+The view now knows the viewmodel, can call it's methods on user input and observe it's data streams.
 The viewmodel knows model, observes it's data streams and omits them to the view.
-The view knows the viewmodel, the viewmodel knows the model and the model don't know any of them.
+The model doesn't know the view or the viewmodel.
 
-\subsection{Conclusion}
-Our choice is MVVM. Not only it looks like the tip of the evolution, but Google even made some libraries to support it.
+\subsection{Conclusion about picking the pattern}
+MVVM suits applications for the Android platform the best.
+Google even made some libraries to support MVVM.
 
 \section{Main layers and libraries}
-We will go over the three main layers of the MVVM, add a fourth at the end and describe some libraries that will be used inside of them.
+The three main layers of the MVVM will be described here, including a new fourth layer separated from the model.
+Some libraries that will be used inside of those layers will also be described here.
 
 \subsection{View}
-As we said before, the view is the layer responsible for displaying data. It's what it called a screen in functional requirements.
-The way it's implemented is through a combination of standard kotlin code and xml.
-The xml is like a skeleton and kotlin is like life. In xml, you specify the look and in kotlin, you can specify what data it should display, how to update itself and what to do with user input.
+As stated before, the view is the layer responsible for displaying data.
+The way it's implemented is through a combination of standard Kotlin code and XML.
+The XML is mostly used to forming the display structure and Kotlin is mostly used to determine what data the view should display, how to update itself and what to do with user input.
 
-For that, you have to somehow link or bind these two things (xml and kotlin) together.
-We will be using a library called Data Binding. It's better than nothing and compared to other solutions, like kotlin's synthetics, Data Binding offers more features and has a more robust outlook.
+In order to work this way, XML and Kotlin have to be somehow linked together.
+A library called Data Binding will be used for this purpose.
+Compared to other solutions, like Kotlin synthetics, Data Binding offers more features and has a more robust outlook.
 
 \subsection{Viewmodel}
 Google has made some architecture components and one of them is exactly for viewmodel.
-It will be shame not to use it.
+There is no better way to represent this layer, so this component will be used in our application.
 
 \subsection{Repository}
-Repository will represent the model.
-It's a place responsible for maintaining data.
-Does the application need to download them, or load from cache?
-Do you need to get anything out of the application or get anything in it?
-You will ask the repository, also known as the one and the only source of truth.
+Repository will represent the part of model responsible for caching and maintaining data stored in the application's local database through communication with the following layer.
 
 \subsection{DAO and network IO}
-This will be the fourth layer.
-Every android app can run it's own SQLite database.
-Data Access Objects will be used to access data in in this database.
-There is a nice library for that called Room and we will be using it.
-Network IO layer will be responsible for communication with server instance API.
-We will be using Retrofit library for those API requests.
-Repository will be using both of those in order to maintain and organise data.
+This will be the fourth layer responsible for storing and loading data and communicating over the internet.
+
+Storing and loading data is a common problem with already existing solutions.
+These solutions are called persistence libraries.
+One persistence library will be chosen for our application, so the data maintaining doesn't have to be implemented again.
+The three popular persistence libraries for the Android platform are Room\cite{room}, Realm\cite{realm} and ObjectBox\cite{objectbox}.
+Out of these three, only Room offers the usage of custom written SQL commands, thus providing more flexibility and will be used for our application.
+
+Communicating over the internet is also a common problem, so an existing library will be chosen.
+Between commonly used HTTP libraries, not specialised for images, belong Volley\cite{volley} and Retrofit\cite{retrofit}.
+Volley is more of a HTTP client and Retrofit makes it very easy to adapt to REST APIs.
+Our application will be communicating with the \etl 's REST API and Retrofit is a more fitting solution.
 
 \subsection{LiveData}
-LiveData is a library.
-It will be used in each layer. \todo[inline]{why?}
-Previously we talked about observing some kind of stream.
-For this, you need some kind of observable variables and that's what LiveData is.
-It enables you to set some action to happen when the data changes.
-LiveData is not just some ordinary stream, it only streams, when there is some observer living.
-It may sound silly, but for example, you don't need to update certain screen, when that screen is not visible.
+Previously in \autoref{subsec:mvvm}, ``some kind of stream'' was mentioned.
+For this, an observable data structure is needed and that's what LiveData\cite{livedata} is.
+Compared to RxJava\cite{rxjava}, another stream like data structure, LiveData misses some features like working on a background thread and is a bit more complex to use, but LiveData is lifecycle-aware.
+Views have something called lifecycle.
+Once they're not on screen, all links to them have to removed, otherwise memory leaks occur.
+LiveData objects respect these lifecycles, so no additional repetitive code has to be written.
+Also, LiveData objects are not really streams, because they do nothing when there is no observer.
+If content changes multiple times between  the  screen  refresh  rate,  the  view  gets  only  the  latest  change.
+LiveData will be used to propagate data all the way from model, through viewmodel, to view in the MVVM architecture.\todo[inline]{why?}
 
 \section{Conclusion}
 
@@ -120,6 +130,8 @@ It may sound silly, but for example, you don't need to update certain screen, wh
 	\caption[Architecture]{Diagram consisting of MVVM and server instances}\label{fig:architecture}
 \end{figure}
 
-For better perspective, here is a summarizing diagram: \ref{fig:architecture}
-\todo[inline]{use autoref}
-The android device will communicate directly with multiple server instances. Network IO layer will be responsible for this communication. Repository will cache it using the Local DB layer and hand out data to the viewmodel. Viewmodel can do any UI logic that's needed and pass it to the view. All handing out or passing from any bottom layer to the one on top will be done through the observation of LiveData.
+Repository will communicate with the DAO and Network layer in order to download, store and load data.
+Viewmodel will communicate with repository and offer data ready to display to the view layer.
+View layer will display data and react to user input by forwarding it to the viewmodel.
+Passing data to the view layer will be handed using LiveData.
+The summary can be seen in \autoref{fig:architecture}\todo[inline]{use autoref}

@@ -1,25 +1,29 @@
-If there already exists a perfect solution which suits my requirements, it doesn't make sense to create it one more time.
+If there already exists a perfect solution which suits our requirements, it doesn't make sense to create it one more time.
 
 \section{Description of existing solutions}
+Here is a brief description of solutions that already exist.
 
 \subsection{Responsive web app}
+The web front-end can be used by any device possessing a web browser.
 \todo[inline]{use formal language}
-It \todo[inline]{what is "it"?} works on any device \todo[inline]{so, a typewriter?}, not just android devices.
-\todo[inline]{this reads like a concept of a blog post, not like a formal message.}
-Users don't have to download it, which also means they don't have to update it.
+%It \todo[inline]{what is "it"?} works on any device \todo[inline]{so, a typewriter?}, not just android devices.
+%\todo[inline]{this reads like a concept of a blog post, not like a formal message.}
+Users don't have to download any application, which also means they don't have to update it.
 The responsive web app only works with one server instance.
-On an android device, it responds slower to screen rotation and animations feel laggy.
-Even if you don't want to execute anything, just view history or list pipelines, you have to be online.
+On an Android device, it responds slower to screen rotation and animations often lag.
+% Even if you don't want to execute anything, just view history or list pipelines, you have to be online.
+Even if users don't want to execute anything, just view history or list pipelines, they have to be online.
 It is also browser dependent.
 
 \section{Summary of existing solutions}
+In this section, existing solutions are being compared with each other (see \autoref{tab:existingSolutions}), resulting in a decision if there is a need to create new application.
 \todo[inline]{each heading needs to be followed by a text and not another heading. What is the contents of this section, briefly?}
 
-\begin{table}[h]\centering
-\caption[Existing solutions]{Features of existing solutions}\label{tab:existingSolutionsTable}
+\begin{table}[ht]\centering
+\caption[Existing solutions]{Features of existing solutions}\label{tab:existingSolutions}
 \begin{tabular}{l|l|l}
 \hline
-Feature & Android App & Web App \\ \hline
+\textbf{Feature} & \textbf{Android App} & \textbf{Web App} \\ \hline
 Can work with multiple server instances & + & - \\ \hline
 Works on any device & - & + \\ \hline
 Doesn't need to be downloaded & - & + \\ \hline
@@ -27,3 +31,5 @@ Smooth UI & + & - \\ \hline
 Can view stuff while offline & + & - \\ \hline
 \end{tabular}
 \end{table}
+
+The comparison indicates that the web application is missing at least one critical feature, that is not being able to work with multiple server instances, thus there is a need for the creation of new application.

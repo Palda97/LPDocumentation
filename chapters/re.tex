@@ -1,20 +1,27 @@
-Requirements engineering is a process to determine things, the desired system will consist of. This process itself consists of three stages. \todo[inline]{opět - nepopisujte, co je req. eng. ale napište, co je v této části práce uděláno, a jak.}
+%Requirements engineering is a process to determine things, the desired system will consist of. This process itself consists of three stages.
+Things the desired system will consist of will be determined in this chapter by going through following three stages.
+
+\todo[inline]{opět - nepopisujte, co je req. eng. ale napište, co je v této části práce uděláno, a jak.}
 
 \section{Elicitation}
-The first faze \todo[inline]{phase. Nechte si text nakonec opravit} of requirements engineering is elicitation. It's the faze of gathering information.
-For us, it's these two lines:
+Raw information about a desired application will be gathered here.
+These two sentences were gathered:
 \begin{itemize}
-    \item It will be an android-based mobile application serving as an alternative client to the current LinkedPipes ETL frontend.
-    \item The application will provide pipeline and execution management and notification capabilities for multiple LinkedPipes ETL instances.
+    \item It will be an android-based mobile application serving as an alternative client to the current \etl{} front-end.
+    \item The application will provide pipeline and execution management and notification capabilities for multiple \etl{} instances.
 \end{itemize}
 
 \section{Analysis}
-Analysis faze is all about making sense from elicitation. It's a systematic approach to elicitation.
+Analysis phase is about making sense from elicitation.
+It's a systematic approach to elicitation.
 
 \todo[inline]{Need to restructure: First, you get requirements. Then you analyze them and create use cases. Each use case represents a goal the user wants to achieve using the app.  Each use case has a user scenario describing approximately what steps need to be taken to achieve the goal. Since here, you do not have the design ready, it does not have to be click-by-click. Each use case should cover some requirements, and you should specify which.}
 
 \subsection{Use cases}
-One good method of achieving this is by describing some use cases. Each use case is something that user expects from the system. We will also create scenarios for the non trivial ones. Scenario is an array of tasks user should do in order to go through the use case.
+One good method of achieving this is by describing some use cases.
+Each use case is something that users expect from the system.
+Scenarios will be created for the non trivial ones.
+Scenario is an array of tasks user should do in order to go through the use case.
 
 \subsubsection*{UC-1: Get overview of executions in particular server instance}
 Enables user to see what pipelines were executed in chronological order from specific server instance.
@@ -44,7 +51,7 @@ User has the option to be notified about execution completion.
 %For better perspective, here is a diagram of all these use cases: \ref{fig:uc}
 
 \subsection{Scenarios}
-Now we can create some scenarios for the user.
+In this section, scenarios for users will be created.
 
 \subsubsection*{SC-1.1: Get overview of executions in particular server instance}
 User opens execution history screen and selects what server instance executions he wants to see.
@@ -85,10 +92,12 @@ User must be able to delete already added server instance. It will be possible t
 \subsection*{F-2.5: Deactivate server instance}
 User can deactivate server instance in settings instead of deleting it, so it is possible to activate it again later easily. App will not communicate with deactivated server instances.
 \subsection*{F-2.6: Ping server}
+\label{subsec:ping}
 User can test if the server address is correct
 \subsection*{F-2.7: Load server instance info from qr code}
 User can load server instance URL from qr code
 \subsection*{F-3.1: Notification after finish}
+\label{subsec:notifications}
 Application shell create notification on pipeline finish. It can be seen in scenarios SC-9.1.
 \subsection*{F-3.2: Notifications in settings}
 There will be switch in settings to toggle notifications. It can be seen in scenarios SC-9.1.
@@ -97,6 +106,7 @@ Application must have a separate screen for working with pipelines. Which pipeli
 \subsection*{F-4.1: View pipelines}
 List of pipelines will be visible from pipeline list screen. Which pipelines will be visible depends on F-4.7. It can be seen in scenarios SC-2.1, SC-4.2, SC-4.3.
 \subsection*{F-4.2: Edit pipeline screen}
+\label{subsec:editpipelinescreen}
 Application must have a screen for editing pipelines. It can be seen in scenarios SC-4.1, SC-4.2.
 \subsection*{F-4.3: Create pipelines}
 User must be able to start an empty edit pipeline screen (F-4.2) from the pipeline list screen (F-4.0). It can be seen in scenarios SC-4.1.

@@ -1,60 +1,43 @@
 \section{Material Design}
-Because we want our app to look decent, our path will be guided by material design. \todo[inline]{Why not bootstrap? Why not vue.js? First, describe and compare the possibilities, then explain why you chose what you chose}
-What is material design? \todo[inline]{missing link}
-Material design is a systematic approach and set of guidelines for creating UI.
-It describes individual components, when to use them and when to not use them.
+% Because we want our app to look decent, our path will be guided by material design.
+Because the application should look decent, some guidelines have to be chosen and followed.
+There exists frameworks and libraries with guidelines like Bootstrap\cite{bootstrap}, React\cite{react} or Material Design\cite{material}.
+Bootstrap is a framework with it's own guidelines used for web development.
+React is a JavaScript library that recommends Web Content Accessibility Guidelines\cite{wcag} and is also used for web development.
+Material Design is a set of guidelines for developing websites, but also for Android and iOS applications.
+The only one of those guidelines, that specializes on Android, is Material Design.
+Google itself states: \textit{Not only should you follow material design guidelines for visual and navigation patterns, but you should also follow quality guidelines for compatibility, performance, security, and more.}\cite{design}
+\todo[inline]{Why not bootstrap? Why not vue.js? First, describe and compare the possibilities, then explain why you chose what you chose}
+Material design describes individual components, when to use them and when to not use them.
 The description includes proportions, behaviour and color system.
 
 \section{The three main screens}
-From specifications, it's clear that we need at least one screen for execution history, one for pipelines and one for settings.
+% From specifications, it's clear that we need at least one screen for execution history, one for pipelines and one for settings.
+Based on the analysis of the user requirements in \autoref{chap:requirementsengineering}, three screens which cover the functionality of displaying execution history, pipeline list and settings have to be designed.
 \todo[inline]{do not say "it's clear". It isn't. "Based on the analysis of the user requirements, we will design three screens which cover the functionality..."}
-On the android platform, there are multiple navigation designs.
 
-\subsection{Navigation drawer}
-The hamburger icon at the top left and sliding menu from left to the right.
-If you have 5 or more top level screens, or if you want to have some sort of hierarchical menu, this might be the right choice for you, but that's not our case. We have only three main screens.
-Also, with the increasing sizes of mobile phones and most people being right-handed, it's hard to reach the hamburger menu with your right thumb.
+\subsection{Main navigation}
+On the android platform, there are multiple navigation designs and they will be described in this section.
 
-\subsection{Tabs}
+\subsubsection{Navigation drawer}
+The hamburger icon at the top left and sliding menu from left to the right is what navigation drawer looks like.
+This navigation is suitable for five or more top level screens, or some sort of hierarchical menu.\cite{materialandroid}
+
+\subsubsection{Tabs}
 Slidable tabs on top of the screen.
-Recommendation for this type of navigation is at least two screens.
-You can click on tab names or you can just slide left or right in order to navigate between the screens.
-For now, it is one possibility.
+Recommendation for this type of navigation is having at least two screens.\cite{materialandroid}
+Users can click on tab names or just slide left or right in order to navigate between the screens.
 
-\subsection{Bottom navigation}
-Three to five icons, usually with text, at the bottom of the screen.
-It solves the annoying problem with short thumb, because you no longer need to reach the top left corner with it.
-Material design states, that the recommended number of links is three to five. That sounds good.
-It is another possibility.
+\subsubsection{Bottom navigation}
+Bottom navigation consists of icons, usually with text, located at the bottom of the screen.
 
-%\subsection{Bottom navigation}
-%Three to five icons, optionally with text, at the bottom of the screen.
-%It solves the annoying problem with short thumb, because you no longer need to %reach the top left corner with it.
-%Material design states, that the recommended number of links is three to five. %That sounds good.
-%For now, it is one possibility.
-%
-%\subsection{Tabs}
-%Slidable tabs on top of the screen.
-%Recommendation is at least two screens.
-%You can click on tab names or you can just slide left or right in order to %navigate between the screens.
-%It is another possibility.
-%
-%\subsection{Conclusion}
-%The choice is either bottom navigation or tabs.
-%I'm choosing tabs, because I like the idea of having an option to slide between the screens, rather than to be forced to only click.
-
-\subsection{Conclusion}
-The choice is either bottom navigation or tabs.
-And the winner is bottom navigation because we will be displaying some lists of items on those screens. We will make those items swipeable, but we can't have swipeable items on top of swipeable navigation, that would be a mess.
-
-%\begin{figure}
-%	\includegraphics[width=0.3\textwidth]{pics/xd/History.png}
-%	\caption[History]{History screen design}\label{fig:xdHistory}
-%	\includegraphics[width=0.3\textwidth]{pics/xd/Pipelines.png}
-%	\caption[Pipelines]{Pipelines screen design}\label{fig:xdPipelines}
-%	\includegraphics[width=0.3\textwidth]{pics/xd/Settings.png}
-%	\caption[Settings]{Settings screen design}\label{fig:xdSettings}
-%\end{figure}
+\subsection{Conclusion about the main navigation}
+The navigation drawer will not be used, because our application doesn't require five or more main screens nor a hierarchical menu.
+Also, with the increasing sizes of mobile phones and most people being right-handed, it's hard to reach the hamburger menu with the right thumb.
+There will be lists of items displayed on each of the three main screens.
+Those items will be swipeable and having swipeable items on top of swipeable navigation would cause confusion.
+Material design states, that the recommended number of links in the bottom navigation is three to five.\cite{materialandroid}
+The bottom navigation satisfies our needs and will be used for the main navigation.
 
 \begin{figure}\centering
     \begin{minipage}[b]{0.32\textwidth}
@@ -73,14 +56,14 @@ And the winner is bottom navigation because we will be displaying some lists of 
 
 \subsection{Lists}
 Each of the three main screens will display some sort of list.
-For execution screen it's list of executions, for pipeline screen it's list of pipelines and for settings screen it's list of server instances.
+For execution screen it's a list of executions, for pipeline screen it's a list of pipelines and for settings screen it's a list of server instances.
 
 All of those lists will have one thing in common and that being the swipe gesture.
-When you swipe an item to left or right, it will be deleted.
-User will have the ability to undo this operation for a short period of time.
+When users swipe an item to the left or to the right, the item will be deleted.
+Users will have the ability to undo this operation for a short period of time.
 
-Tapping on item from execution screen or from pipeline screen will launch the pipeline.
-Long click on item from the pipeline screen will open the edit pipeline screen.
+Tapping on item from the pipeline screen will open the edit pipeline screen.
+Long click on item from execution screen or from pipeline screen will launch the pipeline.
 
 \begin{figure}\centering
     \begin{minipage}[b]{0.32\textwidth}
@@ -93,15 +76,15 @@ Long click on item from the pipeline screen will open the edit pipeline screen.
     \end{minipage}
 \end{figure}
 
-\section{Another screens}
+\section{Other screens}
 \todo[inline]{another screen or other screens}
-The three main screens are obviously not the only screens our app will consists of.
+The three main screens are not the only screens our application will consists of.
 
 \subsection{Edit server instance}
-While registering new server instance or editing an already registered one, the app needs the address for communication and some name for better organising.
-We will also let the user add some description on the instance, so he doesn't need to store everything he wants to store about the instance in the server name.
-There could also be some option to ping the server (F-2.6) to verify the address and a way to cancel the registration/edit.
-Because of this all, we want to add another screen just for registering/editing server instance.
+While registering new server instance or editing an already registered one, the application needs the address for communication and some name for labeling and better organising.
+Users will be able to add a description of the instance, so that there is no pressure to store every information about the instance in the server name.
+There could also be an option to ping the server (F-2.6, \autoref{subsec:ping}) to verify the address and a way to cancel the registration/edit.
+Because of this, another screen, just for registering/editing server instances, will be added.
 
 \begin{figure}\centering
     \begin{minipage}[b]{0.32\textwidth}
@@ -111,8 +94,8 @@ Because of this all, we want to add another screen just for registering/editing 
 \end{figure}
 
 \subsection{Edit pipeline screen}
-As F-4.2 states, there have to be a screen for editing pipelines.
-Short description: This is the screen displaying pipeline components and drawing links between them.
+According to the F-4.2 requirement, described in \autoref{subsec:editpipelinescreen}, there have to be a screen for editing pipelines.
+This screen will be displaying pipeline components and drawing links between them.
 
 \begin{figure}\centering
     \begin{minipage}[b]{0.32\textwidth}
@@ -125,10 +108,8 @@ Short description: This is the screen displaying pipeline components and drawing
     \end{minipage}
 \end{figure}
 
-
-
 \subsection{Edit component screen}
-Each component have it's own settings so there is a need for another screen.
+This screen has to be created, because each pipeline's component has it's own settings.
 
 \begin{figure}\centering
     \begin{minipage}[b]{0.32\textwidth}
@@ -141,19 +122,8 @@ Each component have it's own settings so there is a need for another screen.
     \end{minipage}
 \end{figure}
 
-%\begin{figure}\centering
-%    \begin{minipage}[b]{0.32\textwidth}
-%    	\includegraphics[width=\textwidth]{pics/xd/Edit unsupported component - %configuration.png}
-%    	\caption[Edit unsupported component screen 1]{Edit unsupported %component screen 1 design}\label{fig:xdEditUnsupportedComponent1}
-%    \end{minipage}
-%    \begin{minipage}[b]{0.32\textwidth}
-%    	\includegraphics[width=\textwidth]{pics/xd/Edit unsupported component - %io.png}
-%    	\caption[Edit unsupported component screen 2]{Edit unsupported %component screen 2 design}\label{fig:xdEditUnsupportedComponent2}
-%    \end{minipage}
-%\end{figure}
-
 \subsection{Notifications}
-Requirements engineering tells us, we need to implement notifications.
+According to the F-3.1 requirement, described in \autoref{subsec:notifications}, notifications need to be implemented.
 
 \begin{figure}\centering
     \begin{minipage}[b]{0.7\textwidth}
