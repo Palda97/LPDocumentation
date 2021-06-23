@@ -39,7 +39,8 @@
 \newcommand{\ld}{\acfl{l}inked data}
 
 \department{Department of Software Engineering}
-\title{Mobile client for LinkedPipes ETL on the Android platform}
+% \title{Mobile client for LinkedPipes ETL on the Android platform}
+\title{Android-based mobile client for LinkedPipes ETL}
 \authorGN{David} %(křestní) jméno (jména) autora
 \authorFN{Paleček} %příjmení autora
 \authorWithDegrees{David Paleček} %jméno autora včetně současných akademických titulů
@@ -60,8 +61,8 @@ It contains all stages of the development of this application, which are writing
 }
 \placeForDeclarationOfAuthenticity{V~Praze}
 \declarationOfAuthenticityOption{5} %volba Prohlášení (číslo 1-6)
-\keywordsEN{client creation, android, kotlin, LinkedPipes, ETL}
-\keywordsCS{tvorba klienta, android, kotlin, LinkedPipes, ETL}
+\keywordsEN{client creation, Android, Kotlin, LinkedPipes, ETL}
+\keywordsCS{tvorba klienta, Android, Kotlin, LinkedPipes, ETL}
 % \website{http://site.example/thesis} %volitelná URL práce, objeví se v tiráži - úplně odstraňte, nemáte-li URL práce
 \usepackage{pdfpages}
 \begin{document}
@@ -74,69 +75,56 @@ It contains all stages of the development of this application, which are writing
 	\input{chapters/introduction}
 \end{introduction}
 
-%\chapter{Work goal}
-%\include{chapters/goal}
-%
-%%\include{chapters/templateHelp}
-%
-%\chapter{Requirements engineering}
-%\include{chapters/re}
-%
-%\chapter{Existing solutions}
-%\include{chapters/existingSolutions}
-%
-%\chapter{Design}
-%\include{chapters/ui}
-%\include{chapters/architecture}
-%
-%%\chapter{Realization}
-%\chapter{Implementation}
-%\include{chapters/realization}
-%
-%\chapter{Deployment}
-%\include{chapters/deployment}
-
 \chapter*{Work goal}
 \addcontentsline{toc}{chapter}{Work goal}
 \input{chapters/goal}
 
-%\chapter{Literary research}
-%\todo[inline]{tady té kapitole nerozumím. Bibliografie je sekce na konci práce.}
-%\input{chapters/literaryResearch}
-
-%\input{chapters/testing}
-%\input{chapters/templateHelp}
+\chapter*{Glossary}
+\begin{description}
+	\input{glossary}
+\end{description}
 
 \chapter{Requirements engineering}
 \label{chap:requirementsengineering}
-\input{chapters/re}
+% \input{chapters/re}
+\input{chapters/analysis}
 
 \chapter{Existing solutions}
 \label{chap:existingsolutions}
 \input{chapters/existingSolutions}
 
-\chapter{Design}
-\label{chap:design}
-\todo[inline]{tady chybí úvodní text ke kapitole 3}
+\chapter{UI Design}
+\label{chap:uidesign}
 \input{chapters/ui}
+\chapter{Architecture Design}
+\label{chap:architecturedesign}
 \input{chapters/architecture}
 
 %\chapter{Realization}
 \chapter{Implementation}
 \label{chap:implementation}
-\input{chapters/realization}
+% \input{chapters/realization}
+\input{chapters/implementation}
 
-\chapter{Deployment}
-\input{chapters/deployment}
+\chapter{Documentation}
+\label{chap:doc}
+\input{chapters/documentation}
+
+\chapter{Tests}
+\label{chap:tests}
+\input{chapters/tests}
+
+% \chapter{Deployment}
+% \input{chapters/deployment}
 
 \begin{conclusion}
 	%sem napište závěr Vaší práce
 	\input{chapters/conclusion}
 \end{conclusion}
 
-%\bibliographystyle{csn690}
-%\bibliography{mybibliographyfile}
-\input{bibliography}
+\bibliographystyle{iso690}
+\bibliography{bibliography}
+%\input{bibliography}
 
 \appendix
 

@@ -1,26 +1,21 @@
-\ld{} \todo[inline]{link, např. \url{https://www.w3.org/standards/semanticweb/data}} is data that links to other data using URIs.
-The URIs identify not only other data objects, but also relations, types or other concepts.
-\etl{} is a system for working with \ld{}.
-\todo[inline]{tady není jasné, co je to "working". dejte příklady - minimálně producing, transforming and consuming} \todo[inline]{tady to teď nenavazuje} by students and researchers from Prague computer science universities.
-\todo[inline]{je taky třeba přidat příslušné reference. Tady konkrétně pomocí BibTeX dle \url{https://dblp.uni-trier.de/rec/conf/iiwas/KlimekS17.html?view=bibtex} - beztak máte dost nedostatečnou sekci bibliografie (jen 2 záznamy)}.
+\ld{} is data that links to other data using URIs.
+The URIs identify not only other data objects, but also relations, types or other concepts. \cite{linkeddata}
+
+\etl{} is a system that consumes, transforms and produces \ld{}.
+It was created in 2016 by students and researchers from Prague computer science universities \cite{etlpublication}.
 It is an open source project \cite{etl} with MIT license, so anyone can use it.
-%After you setup a server, \todo[inline]{ve formálnějších pracech není vhodné používat you. Preferované je "after the server is set up".}
-%you can access it via web browser.
-%\todo[inline]{není třeba to tu ale dávat do časové souvislosti s tím že někdo setupuje server. Zkrátka system se ovládá pomocí frontendu, který je webový. Ale jelikož využívá API, tak to API lze použít i pro tvorbu nativní mobilní aplikace.}
 The system is accessible via web front-end.
-The front-end has a support for mobile phones, but it has some drawbacks that will be discussed later.
-\todo[inline]{tady bych to propojil s minulou větou, např. The main drawback is that ... } And there is no easy way of managing multiple server instances from one place.
+The front-end has a support for mobile phones, but it has some drawbacks that will be discussed later, with the main drawback being that it is unable to manage multiple server instances from one place.
 
-%In this work we're going to \todo[inline]{zase.. vhodnější je In this thesism a solution to both problems is presented....} solve both of those problems at the same time, by making an android application, where you can manage all of your ETL server instances at the same time.
-% In this thesis a solution to both problems is presented by making an Android application, where you can manage all of your ETL server instances at the same time.
 In this thesis a solution to both problems is presented by making an Android application, where all of the user's \etl{} server instances can be managed at the same time.
-The android application will provide nice and smooth mobile experience to \etl{} users, especially to those, who are working with multiple server instances.
+The Android application will provide nice and smooth mobile experience to \etl{} users, especially to those, who are working with multiple server instances.
 
-\todo[inline]{The rest of this thesis is structured as follows.... a použijte autoref pro odkazování na příslušné sekce}
 The rest of this thesis is structured as follows.
-Things that are expected from the application will be written down in \autoref{chap:requirementsengineering}.
+Requirements for the application will be written down in \autoref{chap:requirementsengineering}.
 The written requirements will be compared to existing solutions in \autoref{chap:existingsolutions}.
-If no existing solution satisfies our requirements, the application will be designed. \todo[inline]{vynechal bych tuto větu, jelikož kdyby nějaké řešní bylo, neměl byste v práci co dělat, tedy to zde působí úsměvně.}
-The application's parts that can be seen and user can interact with alongside with parts that can not be seen, such as the architecture, will be designed in \autoref{chap:design}.
-At the end of the \autoref{chap:design}, everything needed for the implementation should be known.
-In the \autoref{chap:implementation}, there will be some interesting stuff that happened during programming the app. \todo[inline]{toto je velice neformální. Lépe: popíšete proces implementace řešení.} \todo[inline]{a co ostatní kapitoly?}
+The application's parts that can be seen and user can interact with will be designed in \autoref{chap:uidesign}.
+Parts that can not be seen, such as the architecture, will be designed in \autoref{chap:architecturedesign}.
+At the end of the \autoref{chap:architecturedesign}, everything needed for the implementation should be known.
+In the \autoref{chap:implementation}, important libraries and some inconspicuous algorithms will be described.
+Creation of documentation will be described in \autoref{chap:doc}.
+Testing will be described in \autoref{chap:tests}.
