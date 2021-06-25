@@ -11,7 +11,7 @@ Both Microsoft Fluent Design System \cite{fluentui} and Material Design \cite{ma
 
 The Bootstrap Android library has not been updated since December 2016 and considering that UI design is always changing and evolving, this library is out of question.
 Both Microsoft Fluent Design System and Material Design are being kept up-to-date and are backed by big international companies, which should ensure their stability.
-Because our application will be available on the Android platform, which is Google's domain and most of Android phones come with several Google applications pre-installed, Android users are already used to Material Design.
+Because our application will be available on the Android platform, which is Google's domain and most Android phones come with several Google applications pre-installed, Android users are already used to Material Design.
 
 That is why Material Design will be used by our application.
 
@@ -22,7 +22,7 @@ Based on the analysis of the user requirements in \autoref{chap:requirementsengi
 On the Android platform, there are multiple navigation designs and they will be described in this section.
 
 \subsection{Navigation drawer}
-The hamburger icon at the top left and sliding menu from left to the right is what navigation drawer looks like.
+The hamburger icon at the top left and sliding menu from left to right is what the navigation drawer looks like.
 This navigation is suitable for five or more top level screens, or some sort of hierarchical menu \cite{navigationdrawer}.
 
 \subsection{Tabs}
@@ -38,7 +38,7 @@ The navigation drawer will not be used, because our application does not require
 Also, with the increasing sizes of mobile phones and most people being right-handed, it is hard to reach the hamburger menu with the right thumb.
 There will be lists of items displayed on each of the three main screens.
 Those items will be swipeable and having swipeable items on top of swipeable navigation would cause confusion.
-Material Design states, that the recommended number of links in the bottom navigation is three to five \cite{bottomnavigation}.
+Material Design states that the recommended number of links in the bottom navigation is three to five \cite{bottomnavigation}.
 The bottom navigation satisfies our needs and will be used for the main navigation.
 The three main screens, containing the bottom navigation, can be seen in \autoref{fig:xdHistory}, \autoref{fig:xdPipelines} and \autoref{fig:xdSettings}.
 
@@ -59,7 +59,7 @@ The three main screens, containing the bottom navigation, can be seen in \autore
 
 \section{Lists}
 Each of the three main screens will display some sort of list.
-For execution screen it is a list of executions, for pipeline screen it is a list of pipelines and for settings screen it is a list of server instances.
+For the execution screen it is a list of executions, for the pipeline screen it is a list of pipelines and for the settings screen it is a list of server instances.
 
 All of those lists will have one thing in common and that being the swipe gesture.
 When users swipe an item to the left or to the right, the item will be deleted.
@@ -67,7 +67,7 @@ This can be seen in \autoref{fig:xdDeletePipeline}.
 Users will have the ability to undo this operation for a short period of time.
 The undo option can be seen in \autoref{fig:xdUndo}.
 
-Tapping on item from the pipeline screen will open the edit pipeline screen.
+Tapping on an item from the pipeline screen will open the edit pipeline screen.
 Long click on item from execution screen or from pipeline screen will launch the pipeline.
 
 \begin{figure}\centering
@@ -82,7 +82,7 @@ Long click on item from execution screen or from pipeline screen will launch the
 \end{figure}
 
 \section{Edit server instance screen}
-While registering new server instance or editing an already registered one, the application needs the address for communication and some name for labeling and better organising.
+While registering a new server instance or editing an already registered one, the application needs the address for communication and some name for labeling and better organising.
 Users will be able to add a description of the instance, so that there is no pressure to store every information about the instance in the server name.
 There could also be an option to ping the server (F-2.6, \autoref{subsec:ping}) to verify the address and a way to cancel the registration/edit.
 Because of this, another screen, just for registering/editing server instances, will be added and can be seen in \autoref{fig:xdEditServerInstance}.
@@ -99,7 +99,7 @@ Because of this, another screen, just for registering/editing server instances, 
 \end{figure}
 
 \section{Edit pipeline screen}
-According to the F-4.3 requirement, described in \autoref{subsec:editpipelinescreen}, there have to be a screen for editing pipelines.
+According to the F-4.3 requirement, described in \autoref{subsec:editpipelinescreen}, there has to be a screen for editing pipelines.
 This screen will be displaying pipeline components and drawing links between them.
 The preliminary design of this screen can be seen in \autoref{fig:xdPipelineEditor}
 
@@ -115,7 +115,7 @@ The preliminary design of this screen can be seen in \autoref{fig:xdPipelineEdit
 % \end{figure}
 
 \section{Edit component screen}
-This screen has to be created, because each pipeline's component has it's own settings.
+This screen has to be created, because each pipeline's component has its own settings.
 In \autoref{fig:xdEditComponent1} and \autoref{fig:xdEditComponent2} is the preliminary design of this screen.
 
 \begin{figure}\centering

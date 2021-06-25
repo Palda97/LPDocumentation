@@ -6,24 +6,24 @@ In this section, granular requirements are gathered and described.
 \subsection*{F-1.1: Settings screen}
 Application must have a separate screen for settings.
 \subsection*{F-2.1: View server instance}
-List of server instances will be visible from settings screen.
+List of server instances will be visible from the settings screen.
 \subsection*{F-2.2: Add server instance}
-User must be able to add server instance.
+User must be able to add server instances.
 \subsection*{F-2.3: Edit server instance}
-User must be able to edit already added server instance.
+User must be able to edit already added server instances.
 \subsection*{F-2.4: Delete server instance}
-User must be able to delete already added server instance. It will be possible to undo the action.
+User must be able to delete already added server instances. It will be possible to undo the action.
 \subsection*{F-2.5: Deactivate server instance}
-User can deactivate server instance in settings instead of deleting it, so it is possible to activate it again later easily. App will not communicate with deactivated server instances.
+User can deactivate server instances in settings instead of deleting it, so it is possible to activate it again later easily. App will not communicate with deactivated server instances.
 \subsection*{F-2.6: Ping server}
 \label{subsec:ping}
 User can test if the server address is correct.
 \subsection*{F-2.7: Load server instance info from QR code}
 \label{subsec:qrcode}
-User can load server instance URL from QR code.
+User can load server instance URLs from QR code.
 \subsection*{F-3.1: Notification after pipeline execution finish}
 \label{subsec:notifications}
-Application shell create a notification on pipeline execution finish.
+Application shall create a notification on pipeline execution finish.
 \subsection*{F-3.2: Notifications in settings}
 It will be possible to toggle notifications in settings.
 \subsection*{F-4.1: Pipeline list screen}
@@ -36,11 +36,11 @@ Application must have a screen for editing pipelines.
 \subsection*{F-4.4: Create pipelines}
 User must be able to start an empty edit pipeline screen (F-4.3) from the pipeline list screen (F-4.1).
 \subsection*{F-4.5: Edit existing pipelines}
-User must be able to edit selected pipeline by starting the edit pipeline screen (F-4.3) with the selected pipeline loaded.
+User must be able to edit pipelines by starting the edit pipeline screen (F-4.3) with the selected pipeline loaded.
 \subsection*{F-4.6: Delete pipelines}
 User must be able to delete a pipeline of his choice.
 \subsection*{F-4.7: Execute pipeline}
-User must be able to execute selected pipeline.
+User must be able to execute pipelines.
 \subsection*{F-4.8: Source for visible pipelines}
 User must be able to choose, if he wants to see pipelines from all instances, or just a specific one.
 \subsection*{F-5.1: Execution history screen}
@@ -52,9 +52,9 @@ User must be able to delete a specific execution from the execution history. It 
 \subsection*{F-5.4: Re-execute pipelines from history}
 There must be an option to re-execute pipeline from the execution history screen. This action will also make a new record in execution history.
 \subsection*{F-5.5: Source of visible history}
-User must be able to choose, if he wants to see history of all instances, or just a specific one.
+User must be able to choose, if he wants to see the history of all instances, or just a specific one.
 \subsection*{F-6.1: Night mode}
-User can have an option in settings to use light or dark theme, or use system default theme (Android 10 and newer).
+User can have an option in settings to use a light or a dark theme, or use the system default theme (Android 10 and newer).
 
 
 
@@ -74,16 +74,16 @@ See \autoref{fig:uc}
 
 
 \subsection*{UC-1: Get overview of executions in particular server instance}
-Enables user to see what pipelines were executed in chronological order from specific server instance.
+Enables user to see what pipelines were executed in chronological order from a specific server instance.
 
 \begin{itemize}
 \item \textbf{SC-1.1: Get overview of executions in particular server instance}
-User opens execution history screen (F-5.1, F-5.2) and selects what server instance's executions he wants to see (F-5.5).
+User opens the execution history screen (F-5.1, F-5.2) and selects what server instance's executions he wants to see (F-5.5).
 
 \end{itemize}
 
 \subsection*{UC-2: Execute specific pipeline}
-Enables user to execute pipeline of his choice from specific server instance.
+Enables user to execute a pipeline of his choice from a specific server instance.
 
 \begin{itemize}
 \item \textbf{SC-2.1: Execute specific pipeline}
@@ -92,22 +92,22 @@ User opens pipeline list screen (F-4.1, F-4.2). He then finds the desired pipeli
 \end{itemize}
 
 \subsection*{UC-3: Manage registered server instances}
-Enables user to register server instance in the application. Application will check, if IP is already registered or if name of the new server instance is already in use, in order to warn user about duplication or name collision that could cause chaos. It also enables user to change IP address of already registered server instance due to type error or network changes. User can also remove registered server instance.
+Enables user to register server instances in the application. Application will check, if IP is already registered or if name of the new server instance is already in use, in order to warn user about duplication or name collision that could cause chaos. It also enables user to change the IP address of already registered server instances due to type error or network changes. User can also remove registered server instances.
 
 \begin{itemize}
 \item \textbf{SC-3.1: Change IP address or name of registered server instance}
 User opens settings screen (F-1.1), selects the desired server instance (F-2.1) for editing (F-2.3). He then changes the IP address and saves the changes.
 
 \item \textbf{SC-3.2: Register server instance}
-User opens settings screen (F-1.1), tells the application he wants to register new server instance and proceeds to enter server instance's information (F-2.2) and saves it.
+User opens settings screen (F-1.1), tells the application he wants to register a new server instance and proceeds to enter server instance's information (F-2.2) and saves it.
 
 \item \textbf{SC-3.3: Delete registered server instance}
-User opens settings screen (F-1.1), views registered server instances (F-2.1) and tells the application what server instance he wants to delete. It will be possible to undo the action (F-2.4).
+User opens the settings screen (F-1.1), views registered server instances (F-2.1) and tells the application what server instance he wants to delete. It will be possible to undo the action (F-2.4).
 
 \end{itemize}
 
 \subsection*{UC-4: Manage pipelines}
-Enables user to manage pipelines in desired server instance.
+Enables user to manage pipelines in desired server instances.
 
 \begin{itemize}
 \item \textbf{SC-4.1: Create pipeline}
@@ -122,11 +122,11 @@ User opens pipeline list screen (F-4.1, F-4.2). He then finds the desired pipeli
 \end{itemize}
 
 \subsection*{UC-5: Re-execute pipeline from history}
-Enables user to quickly execute pipeline he see while viewing history.
+Enables user to quickly execute the pipeline he sees while viewing history.
 
 \begin{itemize}
 \item \textbf{SC-5.1: Re-execute pipeline from history}
-User opens execution history screen (F-5.1, F-5.2). He finds a pipeline and realizes he wants to execute it now, so he tells that to the application (F-5.4). Optional: After opening the execution history screen, user can select what server instance executions he wants to see (F-5.5).
+User opens the execution history screen (F-5.1, F-5.2). He finds a pipeline and realizes he wants to execute it now, so he tells that to the application (F-5.4). Optional: After opening the execution history screen, user can select what server instance executions he wants to see (F-5.5).
 
 \end{itemize}
 
@@ -135,16 +135,16 @@ Enables user to delete items from history.
 
 \begin{itemize}
 \item \textbf{SC-6.1: Delete history}
-User opens execution history screen (F-5.1, F-5.2). He finds a record and realizes that he does not want this record in history anymore, so he tells that to the application (F-5.3). Optional: After opening the execution history screen, user can select what server instance executions he wants to see (F-5.5).
+User opens the execution history screen (F-5.1, F-5.2). He finds a record and realizes that he does not want this record in history anymore, so he tells that to the application (F-5.3). Optional: After opening the execution history screen, user can select what server instance executions he wants to see (F-5.5).
 
 \end{itemize}
 
 \subsection*{UC-7: View execution history}
-Enables user to view execution history of all the instances at the same time.
+Enables user to view the execution history of all the instances at the same time.
 
 \begin{itemize}
 \item \textbf{SC-7.1: Get overview of executions}
-User opens execution history screen (F-5.1, F-5.2).
+User opens the execution history screen (F-5.1, F-5.2).
 
 \end{itemize}
 
@@ -162,7 +162,7 @@ User has the option to be notified about execution completion.
 
 \begin{itemize}
 \item \textbf{SC-9.1: Be notified}
-User executes specific pipeline, just like in SC-2.1. Application will notify user about the execution completion (F-3.1). Notifying will happen only if it is allowed in settings (F-3.2).
+User executes a specific pipeline, just like in SC-2.1. Application will notify user about the execution completion (F-3.1). Notifying will happen only if it is allowed in settings (F-3.2).
 
 \end{itemize}
 
